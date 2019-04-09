@@ -26,11 +26,23 @@ class Game
   end
   
   def draw?
+<<<<<<< HEAD
     !won? && board.full?
   end
   
   def over?
     won? || draw? ? true : false
+=======
+    !won?
+  end
+  
+  def over?
+    if(@board.full?)
+      true
+    else 
+      false
+    end
+>>>>>>> 59e2b61a9214d3ad623e6be6560b56d0c1703438
   end
   
   def winner
@@ -41,7 +53,11 @@ class Game
   
   def turn
     player=current_player
+<<<<<<< HEAD
     puts"Player #{player.token}, please entre a number between 1 and 9"
+=======
+    puts"#{player}, please entre a number between 1 and 9"
+>>>>>>> 59e2b61a9214d3ad623e6be6560b56d0c1703438
     input=player.move(board)
     if(!board.valid_move?(input))
       puts "That input is invalid"
@@ -53,6 +69,7 @@ class Game
   end
   
   def play
+<<<<<<< HEAD
      until over?
      self.turn
      end
@@ -68,3 +85,26 @@ class Game
   end
     
 end
+=======
+    until over?
+      turn
+    end
+
+    if won?
+      puts "\n"
+      puts "Congratulations #{winner}!"
+    elsif draw?
+      puts "\n"
+      puts "Cat's Game!"
+    end
+    board.display
+  end
+    
+end
+
+
+
+
+
+#learn spec/04_game_spec.rb
+>>>>>>> 59e2b61a9214d3ad623e6be6560b56d0c1703438
